@@ -1,11 +1,11 @@
 ﻿using System;
-using System.Collections;
+using MatrixLib;
 
-namespace Матрицы
+namespace Test_Matrix_Lib
 {
-    class Program
+    internal static class Program
     {
-        static void Main()
+        private static void Main()
         {
             int n, m, k;
             Console.WriteLine("Введи размер матрицы:");
@@ -13,6 +13,7 @@ namespace Матрицы
             {
                 Console.Write("N = ");
             } while (!int.TryParse(Console.ReadLine(), out n));
+
             do
             {
                 Console.Write("M = ");
@@ -22,7 +23,8 @@ namespace Матрицы
             {
                 Console.Write("Введи диапазон(от -k до k) K=");
             } while (!int.TryParse(Console.ReadLine(), out k));
-            Matrix a = new Matrix(n, m, true, k);
+
+            var a = new Matrix(n, m, true, k);
             Console.WriteLine("Матрица 1:");
             Console.WriteLine(a.ToString(true));
 
@@ -31,6 +33,7 @@ namespace Матрицы
             {
                 Console.Write("N = ");
             } while (!int.TryParse(Console.ReadLine(), out n));
+
             do
             {
                 Console.Write("M = ");
@@ -40,13 +43,13 @@ namespace Матрицы
             {
                 Console.Write("Введи диапазон(от -k до k) K=");
             } while (!int.TryParse(Console.ReadLine(), out k));
-            Matrix b = new Matrix(n, m, true, k);
+
+            var b = new Matrix(n, m, true, k);
             Console.WriteLine("Матрица 2:");
             Console.WriteLine(b.ToString(true));
 
             Console.WriteLine("Матрица 1*2:");
             Console.WriteLine((a * b).ToString(true));
-
         }
     }
 }
