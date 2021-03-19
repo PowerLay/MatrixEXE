@@ -307,11 +307,6 @@ namespace MatrixLib
             return str;
         }
 
-        public override int GetHashCode()
-        {
-            return base.GetHashCode();
-        }
-
         public override bool Equals(object obj)
         {
             return obj is Matrix matrix &&
